@@ -10,7 +10,7 @@ public class HanderCommand {
 
 
     @SuppressWarnings("RedundantStringFormatCall")
-    public void dispatch(String command) {
+    public void execution(String command) {
         String[] split = command.split(" ");
         if (split.length == 0) {
             return;
