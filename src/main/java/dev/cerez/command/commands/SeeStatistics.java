@@ -11,7 +11,7 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 // 10. Ver estadísticas usando Stream y Map
-public class SeeAll extends BaseCommand {
+public class SeeStatistics extends BaseCommand {
 
     @SuppressWarnings("RedundantStringFormatCall")
     @Override
@@ -28,7 +28,7 @@ public class SeeAll extends BaseCommand {
                 ));
         int sizeQueue = Main.queue.size();
         int sizeDeque = Main.queue.size();
-        long sizeCancel = Main.list.stream().filter(MedicalFormula::getCancel).count();
+        long sizeCancel = Main.list.stream().filter(MedicalFormula::isCancel).count();
 
         System.out.println("|- tamaño por status");
         for (Map.Entry<Status, Long> entry : sizeByStatus.entrySet()) {

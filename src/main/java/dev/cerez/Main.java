@@ -17,7 +17,6 @@ public class Main {
     public static final Deque<MedicalFormula> deque = new ArrayDeque<>();
     public static final Map<Integer, MedicalFormula> map = new HashMap<>();
 
-
     private static boolean isRunning = true;
 
     public static void main(String[] args) {
@@ -28,6 +27,13 @@ public class Main {
                 new SeeList(),
                 new Stop()
         );
+
+        String cmd = """
+                
+                """;
+
+        String[] slist = cmd.split("\n");
+        for (String s : slist) HANDER.execution(s);
 
         Scanner scanner = new Scanner(System.in);
         while (isRunning) {

@@ -9,22 +9,24 @@ import org.jetbrains.annotations.NotNull;
 @Data
 public final class MedicalFormula {
     @NotNull private final String name;
-    @NotNull private final Status status;
     @NotNull private final Category category;
-    @NotNull private Boolean cancel = false;
+    @NotNull private Status status = Status.PENDING;
+
 
     public MedicalFormula(
             String name,
-            Status status,
             Category category
     ) {
         this.name = name;
-        this.status = status;
         this.category = category;
     }
 
     public int codeFormula() {
         return hashCode();
+    }
+
+    public boolean isCancel() {
+        return status == Status.CANCELL;
     }
 
 }

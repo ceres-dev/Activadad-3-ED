@@ -3,6 +3,7 @@ package dev.cerez.command.commands;
 import dev.cerez.Main;
 import dev.cerez.MedicalFormula;
 import dev.cerez.command.BaseCommand;
+import dev.cerez.command.Status;
 
 import java.util.List;
 import java.util.Objects;
@@ -15,6 +16,7 @@ public class Execution extends BaseCommand {
     public void execute(List<String> arguments) {
         MedicalFormula medicalFormula = Objects.requireNonNull(Main.queue.poll());
         LockSupport.parkNanos(TimeUnit.SECONDS.toNanos(1)); // Simular tiempo de procesamiento
+        medicalFormula.setStatus(Status.COMPLETED);
         Main.deque.push(medicalFormula);
     }
 }
