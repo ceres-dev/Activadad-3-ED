@@ -18,7 +18,12 @@ public class Find extends BaseCommand {
         Optional<MedicalFormula> findList = Main.list.stream()
                 .filter(e -> e.getName().equalsIgnoreCase(arguments.getFirst()))
                 .findFirst();
-        MedicalFormula findMap = Main.map.get(Integer.parseInt(arguments.getFirst()));
+        MedicalFormula findMap;
+        try {
+            findMap = Main.map.get(Integer.parseInt(arguments.getFirst()));
+        }catch (NumberFormatException ignored){
+            findMap = null;
+        }
         if (findList.orElse(null) == null && findMap == null) {
             System.out.println("| Nose encontrado");
         }else {

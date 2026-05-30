@@ -7,6 +7,7 @@ import dev.cerez.command.Status;
 
 import java.util.List;
 
+// 13. Deshacer último procesamiento
 public class UndoExecution extends BaseCommand {
     @Override
     public void execute(List<String> arguments) {

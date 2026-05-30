@@ -15,7 +15,7 @@ public class Execution extends BaseCommand {
     @Override
     public void execute(List<String> arguments) {
         MedicalFormula medicalFormula = Objects.requireNonNull(Main.queue.poll());
-        LockSupport.parkNanos(TimeUnit.SECONDS.toNanos(1)); // Simular tiempo de procesamiento
+//        LockSupport.parkNanos(TimeUnit.SECONDS.toNanos(1)); // Simular tiempo de procesamiento
         medicalFormula.setStatus(Status.COMPLETED);
         Main.deque.push(medicalFormula);
     }

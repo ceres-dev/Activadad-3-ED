@@ -7,6 +7,7 @@ import dev.cerez.command.BaseCommand;
 import java.util.Comparator;
 import java.util.List;
 
+// 9. Ordenar elementos usando Stream
 public class Sortd extends BaseCommand {
     @Override
     public void execute(List<String> arguments) {

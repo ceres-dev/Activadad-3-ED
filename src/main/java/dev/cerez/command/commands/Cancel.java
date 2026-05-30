@@ -8,6 +8,7 @@ import dev.cerez.command.Status;
 import java.util.List;
 import java.util.Objects;
 
+// 12. Cancelar elemento pendiente
 public class Cancel extends BaseCommand {
     @Override
     public void execute(List<String> arguments) {

@@ -10,15 +10,17 @@ public class HanderCommand {
 
 
     @SuppressWarnings("RedundantStringFormatCall")
-    public void execution(String command) {
+    public void execution(String command, boolean feedback) {
         String[] split = command.split(" ");
         if (split.length == 0) {
             return;
         }
-        BaseCommand baseCommand = commands.get(split[0]);
+        BaseCommand baseCommand = commands.get(split[0].toLowerCase());
         if (baseCommand != null) {
             List<String> args = new ArrayList<>(List.of(split));
-
+            if (feedback) {
+                System.out.println("/" + split[0].toLowerCase());
+            }
             if (args.size() <= 1) {
                 baseCommand.execute(List.of());
             } else {

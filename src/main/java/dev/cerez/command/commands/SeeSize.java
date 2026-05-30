@@ -5,6 +5,7 @@ import dev.cerez.command.BaseCommand;
 
 import java.util.List;
 
+// 14. Ver cantidad de elementos
 public class SeeSize extends BaseCommand {
     @Override
     public void execute(List<String> arguments) {

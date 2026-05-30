@@ -12,7 +12,7 @@ public class Register extends BaseCommand {
     @Override
     public void execute(@NotNull List<String> arguments) {
         if (arguments.size() >= 2) {
-            MedicalFormula medicalFormula = new MedicalFormula(arguments.get(0), Category.valueOf(arguments.get(2)));
+            MedicalFormula medicalFormula = new MedicalFormula(arguments.get(0), Category.valueOf(arguments.get(1)));
             Main.list.add(medicalFormula);
             Main.map.put(medicalFormula.codeFormula(), medicalFormula);
             Main.queue.add(medicalFormula);

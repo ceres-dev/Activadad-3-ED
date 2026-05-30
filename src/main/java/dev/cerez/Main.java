@@ -1,10 +1,7 @@
 package dev.cerez;
 
 import dev.cerez.command.HanderCommand;
-import dev.cerez.command.commands.Help;
-import dev.cerez.command.commands.Register;
-import dev.cerez.command.commands.SeeList;
-import dev.cerez.command.commands.Stop;
+import dev.cerez.command.commands.*;
 
 import java.util.*;
 
@@ -22,23 +19,43 @@ public class Main {
     public static void main(String[] args) {
 
         HANDER.register(
+                new Cancel(),
+                new Execution(),
+                new Filter(),
+                new Find(),
                 new Help(),
                 new Register(),
+                new SeeHistory(),
                 new SeeList(),
-                new Stop()
+                new SeePending(),
+                new SeeSize(),
+                new SeeStatistics(),
+                new Sortd(),
+                new Stop(),
+                new UndoExecution()
         );
 
         String cmd = """
-                
+                register Alfa A
+                register Beta B
+                register Gamma A
+                seeList
+                execution
+                execution
+                seeList
+                undoExecution
+                seeList
+                seePending
+                find Beta
+                stop
                 """;
 
-        String[] slist = cmd.split("\n");
-        for (String s : slist) HANDER.execution(s);
+        for (String s : cmd.split("\n")) HANDER.execution(s, true);
 
         Scanner scanner = new Scanner(System.in);
         while (isRunning) {
             String arg = scanner.nextLine();
-            HANDER.execution(arg);
+            HANDER.execution(arg, false);
         }
     }
 
