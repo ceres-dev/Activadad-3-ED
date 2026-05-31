@@ -36,9 +36,9 @@ public class Main {
         );
 
         String cmd = """
-                register Alfa A
-                register Beta B
-                register Gamma A
+                register Alfa INTRADERMAL
+                register Beta INTRADERMAL
+                register Gamma INTRAVENOUS
                 seeList
                 execution
                 execution
@@ -47,6 +47,12 @@ public class Main {
                 seeList
                 seePending
                 find Beta
+                Cancel 469768541
+                SeeHistory
+                SeePending
+                undoExecution
+                SeeHistory
+                
                 stop
                 """;
 

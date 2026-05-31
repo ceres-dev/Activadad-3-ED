@@ -11,18 +11,18 @@ import java.util.Objects;
 
 @Data
 public final class MedicalFormula {
-    @NotNull private final String name;
+    @NotNull private final String formulaMedica;
     @NotNull private final Category category;
     @NotNull private Status status = Status.PENDING;
     @Getter(AccessLevel.NONE)
-    private Integer code;
+    private Integer code = null;
 
 
     public MedicalFormula(
-            String name,
-            Category category
+            @NotNull String formulaMedica,
+            @NotNull Category category
     ) {
-        this.name = name;
+        this.formulaMedica = formulaMedica;
         this.category = category;
     }
 

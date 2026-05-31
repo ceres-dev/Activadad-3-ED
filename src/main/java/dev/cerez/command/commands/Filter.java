@@ -13,7 +13,7 @@ public class Filter extends BaseCommand {
             System.err.println("Se requiere el argumento de lobby");
         }
         List<MedicalFormula> filtrados = Main.list.stream()
-                .filter(e -> e.getName().equalsIgnoreCase(arguments.getFirst()))
+                .filter(e -> e.getFormulaMedica().equalsIgnoreCase(arguments.getFirst()))
                 .toList();
 
         for (MedicalFormula formula : filtrados) System.out.println("| " + formula.toString());

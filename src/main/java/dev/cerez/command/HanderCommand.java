@@ -19,7 +19,7 @@ public class HanderCommand {
         if (baseCommand != null) {
             List<String> args = new ArrayList<>(List.of(split));
             if (feedback) {
-                System.out.println("/" + split[0].toLowerCase());
+                System.out.println("/" + command);
             }
             if (args.size() <= 1) {
                 baseCommand.execute(List.of());

@@ -12,7 +12,7 @@ public class Sortd extends BaseCommand {
     @Override
     public void execute(List<String> arguments) {
         List<MedicalFormula> sorted = Main.list.stream()
-                .sorted(Comparator.comparing(MedicalFormula::getName))
+                .sorted(Comparator.comparing(MedicalFormula::getFormulaMedica))
                 .toList();
     }
 }

@@ -16,7 +16,7 @@ public class Find extends BaseCommand {
         }
 
         Optional<MedicalFormula> findList = Main.list.stream()
-                .filter(e -> e.getName().equalsIgnoreCase(arguments.getFirst()))
+                .filter(e -> e.getFormulaMedica().equalsIgnoreCase(arguments.getFirst()))
                 .findFirst();
         MedicalFormula findMap;
         try {
