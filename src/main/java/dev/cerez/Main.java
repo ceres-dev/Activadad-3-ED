@@ -52,7 +52,6 @@ public class Main {
                 SeePending
                 undoExecution
                 SeeHistory
-                
                 stop
                 """;
 
